@@ -133,6 +133,7 @@ async def send_ban_notification(
     except HTTPException:
         raise
     except Exception as e:
-        logger.exception('Ошибка при отправке уведомления', error=e)(
+        logger.exception('Ошибка при отправке уведомления', error=e)
+        raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=f'Внутренняя ошибка сервера: {e!s}'
         )

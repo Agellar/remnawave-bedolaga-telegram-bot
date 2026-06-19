@@ -288,7 +288,7 @@ async def delete_message_confirm(callback: types.CallbackQuery, db_user: User, d
                 chat_instance=callback.chat_instance,
                 data='list_user_messages:0',
                 message=callback.message,
-            ),
+            ).as_(callback.bot),
             db_user,
             db,
         )
