@@ -44,12 +44,14 @@ CALLBACK_TO_CABINET_PATH: dict[str, str] = {
     'balance_topup': '/balance/top-up',
     'menu_subscription': '/subscription',
     'subscription': '/subscription',
-    'subscription_extend': '/subscription',
-    'subscription_upgrade': '/subscription',
+    # «Продлить / Купить / Сменить тариф» ведут на страницу выбора тарифов
+    # (вкладка «Тарифы»), а не на /subscription (вкладка «Устройства»).
+    'subscription_extend': '/subscription/purchase',
+    'subscription_upgrade': '/subscription/purchase',
     'subscription_connect': '/subscription',
     'subscription_resume_checkout': '/subscription',
     'return_to_saved_cart': '/subscription',
-    'menu_buy': '/subscription',
+    'menu_buy': '/subscription/purchase',
     'buy_traffic': '/subscription',
     'menu_referrals': '/referral',
     'menu_referral': '/referral',
